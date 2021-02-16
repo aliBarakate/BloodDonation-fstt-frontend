@@ -9,6 +9,13 @@ import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
 import { SendComponent } from './send/send.component';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+import {ButtonModule} from 'primeng/button';
+import {DropdownModule} from 'primeng/dropdown';
+
+
 
 const appRoutes: Routes = [
   { path: 'inscription', component: SendComponent},
@@ -29,7 +36,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ButtonModule,
+    DropdownModule,
+    BrowserAnimationsModule
 
 
   ],

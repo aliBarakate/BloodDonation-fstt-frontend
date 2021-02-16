@@ -3,6 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import {NgForm} from '@angular/forms';
 
+interface City {
+  name: string,
+  code: string
+}
+
 @Component({
   selector: 'app-send',
   templateUrl: './send.component.html',
@@ -10,7 +15,17 @@ import {NgForm} from '@angular/forms';
 })
 export class SendComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  cities: City[];
+
+    selectedCity: City;
+
+  constructor(private http: HttpClient) { this.cities = [
+    {name: 'New York', code: 'NY'},
+    {name: 'Rome', code: 'RM'},
+    {name: 'London', code: 'LDN'},
+    {name: 'Istanbul', code: 'IST'},
+    {name: 'Paris', code: 'PRS'}
+]; }
 
   onCreatePost(postData: {nom: string;
                           prenom: string;
@@ -31,6 +46,13 @@ export class SendComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ];
   }
 
 }
