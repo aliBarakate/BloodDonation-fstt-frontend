@@ -3,10 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import {NgForm} from '@angular/forms';
 
-interface City {
-  name: string,
-  code: string
+interface Categorie {
+  nomCategorie: string,
 }
+
+interface groupeSanguin{
+  nomGroupe: string,
+}
+
 
 @Component({
   selector: 'app-send',
@@ -15,17 +19,32 @@ interface City {
 })
 export class SendComponent implements OnInit {
 
-  cities: City[];
+  categories: Categorie[];
 
-    selectedCity: City;
+  groupeSanguins: groupeSanguin[];
 
-  constructor(private http: HttpClient) { this.cities = [
-    {name: 'New York', code: 'NY'},
-    {name: 'Rome', code: 'RM'},
-    {name: 'London', code: 'LDN'},
-    {name: 'Istanbul', code: 'IST'},
-    {name: 'Paris', code: 'PRS'}
-]; }
+    selectedCategorie: Categorie;
+    selectedGroupeSanguin: groupeSanguin;
+    groupeSanguin:string;
+
+  constructor(private http: HttpClient) { this.categories = [
+    {nomCategorie: 'Receveur'},
+    {nomCategorie: 'Donneur'},
+    {nomCategorie: 'Medecin'}
+];
+this.groupeSanguins = [
+  {nomGroupe : "Choisir un groupe sanguin" },
+  {nomGroupe : "O_neg" },
+  {nomGroupe : "O_pos" },
+  {nomGroupe : "A_neg" },
+  {nomGroupe : "A_pos" },
+  {nomGroupe : "B_neg" },
+  {nomGroupe : "B_pos" },
+  {nomGroupe : "AB_neg" },
+  {nomGroupe : "AB_pos" }
+];
+
+}
 
   onCreatePost(postData: {nom: string;
                           prenom: string;
@@ -35,6 +54,7 @@ export class SendComponent implements OnInit {
                           tel: string
                           mail: string;  }) {
     // Send Http request
+    postData.groupeSanguin=this.groupeSanguin;
     this.http
       .post(
         'http://localhost:8080/addDonneur',
@@ -45,14 +65,13 @@ export class SendComponent implements OnInit {
       });
   }
 
+  onSelectedElementList(){
+    console.log(this.selectedGroupeSanguin.nomGroupe);
+    this.groupeSanguin=this.selectedGroupeSanguin.nomGroupe;
+  }
+
   ngOnInit(): void {
-    this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
+
   }
 
 }
