@@ -26,6 +26,7 @@ export class SendComponent implements OnInit {
     selectedCategorie: Categorie;
     selectedGroupeSanguin: groupeSanguin;
     groupeSanguin:string;
+    suivantactivated =false;
 
   constructor(private http: HttpClient) { this.categories = [
     {nomCategorie: 'Receveur'},
@@ -69,6 +70,13 @@ this.groupeSanguins = [
     console.log(this.selectedGroupeSanguin.nomGroupe);
     this.groupeSanguin=this.selectedGroupeSanguin.nomGroupe;
   }
+  activatesuivant(){
+    this.suivantactivated=true;
+  }
+  relocate_home()
+{
+     location.href = "receveur";
+}
 
   ngOnInit(): void {
 
