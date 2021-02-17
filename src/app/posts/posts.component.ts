@@ -24,19 +24,19 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  onClickElement(mail) {
+  onClickElement(response) {
         //this.responses = new Array<any>();
-        this.http2.get('http://localhost:8080/sendmail?mail='+mail)
+        this.http2.get('http://localhost:8080/sendmail?mail='+response.mail)
         .subscribe(responses => {
             console.log(responses);
             this.responses=responses;
         });
-    console.log(mail)
-    this.showSuccess();
+    console.log(response.mail)
+    this.showSuccess(response);
   }
 
-  showSuccess() {
-    this.messageService.add({severity:'success', summary: 'Email envoyé avec Success', detail: 'Le donneur de sang à était notifié'});
+  showSuccess(response) {
+    this.messageService.add({severity:'success', summary: 'Email envoyé à '+response.nom, detail: response.nom+' à était notifié au mail suivant '+response.mail});
 }
 
   ngOnInit(): void {

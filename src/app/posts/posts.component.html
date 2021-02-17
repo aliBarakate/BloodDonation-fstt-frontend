@@ -1,7 +1,7 @@
 <h1>Liste des volontaires</h1>
 <div class="list-group">
   <a *ngFor="let response of responses"
-   class="list-group-item list-group-item-action " (click)="onClickElement(response.mail)" >
+   class="list-group-item list-group-item-action " (click)="onClickElement(response)" >
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{response.nom}}</h5>
       <small>{{response.groupeSanguin}}</small>
