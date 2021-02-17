@@ -29,6 +29,7 @@ export class SendComponent implements OnInit {
     suivantactivated =false;
 
   constructor(private http: HttpClient) { this.categories = [
+    {nomCategorie: 'Choisir un type de compte'},
     {nomCategorie: 'Receveur'},
     {nomCategorie: 'Donneur'},
     {nomCategorie: 'Medecin'}

@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
+import { MedecinComponent } from './medecin/medecin.component';
 
 
 
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'receveur', component: PostsComponent},
   { path: 'home', component: AppComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'medecin', component: MedecinComponent},
 ];
 
 @NgModule({
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     AppComponent,
     PostsComponent,
     SendComponent,
-    LoginComponent
+    LoginComponent,
+    MedecinComponent
   ],
   imports: [
     BrowserModule,
