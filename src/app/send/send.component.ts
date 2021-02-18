@@ -59,7 +59,7 @@ this.groupeSanguins = [
     postData.groupeSanguin=this.groupeSanguin;
     this.http
       .post(
-        'http://localhost:8080/addDonneur',
+        'http://localhost:8080/addReceveur',
         postData
       )
       .subscribe(responseData => {
