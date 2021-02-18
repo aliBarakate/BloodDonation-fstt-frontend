@@ -11,13 +11,12 @@ interface groupeSanguin{
   nomGroupe: string,
 }
 
-
 @Component({
-  selector: 'app-send',
-  templateUrl: './send.component.html',
-  styleUrls: ['./send.component.css']
+  selector: 'app-inscription-donneur',
+  templateUrl: './inscription-donneur.component.html',
+  styleUrls: ['./inscription-donneur.component.css']
 })
-export class SendComponent implements OnInit {
+export class InscriptionDonneurComponent implements OnInit {
 
   categories: Categorie[];
 

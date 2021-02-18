@@ -18,6 +18,7 @@ import {ToastModule} from 'primeng/toast';
 import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import { MedecinComponent } from './medecin/medecin.component';
+import { InscriptionDonneurComponent } from './inscription-donneur/inscription-donneur.component';
 
 
 
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'home', component: AppComponent},
   { path: 'login', component: LoginComponent},
   { path: 'medecin', component: MedecinComponent},
+  { path: 'inscriptiondonneur', component: InscriptionDonneurComponent}
 ];
 
 @NgModule({
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     PostsComponent,
     SendComponent,
     LoginComponent,
-    MedecinComponent
+    MedecinComponent,
+    InscriptionDonneurComponent
   ],
   imports: [
     BrowserModule,
