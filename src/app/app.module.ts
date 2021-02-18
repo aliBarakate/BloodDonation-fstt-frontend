@@ -19,6 +19,7 @@ import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import { MedecinComponent } from './medecin/medecin.component';
 import { InscriptionDonneurComponent } from './inscription-donneur/inscription-donneur.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 
 
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
   { path: 'home', component: AppComponent},
   { path: 'login', component: LoginComponent},
   { path: 'medecin', component: MedecinComponent},
-  { path: 'inscriptiondonneur', component: InscriptionDonneurComponent}
+  { path: 'inscriptiondonneur', component: InscriptionDonneurComponent},
+  { path: 'barchart', component: BarChartComponent},
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     SendComponent,
     LoginComponent,
     MedecinComponent,
-    InscriptionDonneurComponent
+    InscriptionDonneurComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
