@@ -17,7 +17,7 @@ export class PostsComponent implements OnInit {
   constructor(http: HttpClient,private messageService: MessageService) {
     this.http2=http
     //this.responses = new Array<any>();
-    http.get('http://localhost:8080/findAllDonneurs')
+    http.get('http://localhost:8080/findAllDonneursForReceveur')
     .subscribe(responses => {
         console.log(responses);
         this.responses=responses;

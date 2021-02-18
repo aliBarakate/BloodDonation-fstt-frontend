@@ -55,7 +55,9 @@ this.groupeSanguins = [
                           groupeSanguin: string;
                           tel: string;
                           mail: string;
-                          adresse: string;  }) {
+                          hopital: string;
+                          adresse: string;
+                            }) {
     // Send Http request
     postData.groupeSanguin=this.groupeSanguin;
     this.http

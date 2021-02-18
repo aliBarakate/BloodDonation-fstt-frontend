@@ -34,6 +34,14 @@ export class MedecinComponent implements OnInit {
 console.log(mail)
 }
 
+onClickDelete(id){
+  this.http2.delete('http://localhost:8080/deleteByCin/'+id)
+  .subscribe(responses => {
+      console.log(responses);
+      this.responses=responses;
+  });
+}
+
 
   ngOnInit(): void {
   }

@@ -10,9 +10,6 @@
 </ul>
 
 <div class="container">
-  <label for="content">Type de compte :</label><br>
-  <p-dropdown [options]="categories"  [(ngModel)]="selectedCategorie"
-  optionLabel="nomCategorie" (ngModelChange)="onSelectedElementList()"></p-dropdown>
   <br>
   <label for="content">Groupe Sanguin</label><br>
   <p-dropdown [options]="groupeSanguins"  [(ngModel)]="selectedGroupeSanguin"
@@ -89,17 +86,7 @@
             name="mail"
           />
         </div>
-        <div class="form-group">
-          <label for="content">Adresse</label>
-          <input
-            type="text"
-            class="form-control"
-            id="adresse"
-            required
-            ngModel
-            name="adresse"
-          />
-        </div>
+
         <button
           class="btn btn-primary"
           type="submit"
