@@ -15,6 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastModule} from 'primeng/toast';
 
 
+import {ChartModule} from 'primeng/chart';
+
+
 import {ButtonModule} from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
 import { MedecinComponent } from './medecin/medecin.component';
@@ -52,7 +55,8 @@ const appRoutes: Routes = [
     ButtonModule,
     DropdownModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+    ChartModule
 
 
   ],
