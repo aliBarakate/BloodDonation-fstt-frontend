@@ -9,7 +9,7 @@
     <a class="nav-link" href="barchart">Diagrammes en batôn</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Diagramme circulaires</a>
+    <a class="nav-link" href="doughnutchart">Diagramme circulaires</a>
   </li>
 
 </ul>
@@ -25,6 +25,7 @@
       <th scope="col">GROUPE SANGUIN</th>
       <th scope="col">EMAIL</th>
       <th scope="col">VILLE</th>
+      <th scope="col">Actif</th>
       <th scope="col">ACTION</th>
     </tr>
   </thead>
@@ -37,6 +38,10 @@
       <td>{{response.groupeSanguin}}</td>
       <td>{{response.mail}}</td>
       <td>{{response.ville}}</td>
+      <td>{{response.actif}}</td>
+
+      <button pButton type="button" icon="pi pi-check" class="p-button-raised p-button-rounded p-button-success" (click)="ocClickActivate(response.id)"></button>
+<span style='margin-right:0.25em; display:inline-block;'>&nbsp;</span>
 
 <button pButton type="button" icon="pi pi-pencil" class="p-button-raised p-button-rounded p-button-warning"></button>
 <span style='margin-right:0.25em; display:inline-block;'>&nbsp;</span>

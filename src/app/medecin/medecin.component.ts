@@ -47,6 +47,18 @@ onClickDelete(id){
   location.href = "medecin";
 }
 
+ocClickActivate(id){
+  this.http2.put('http://localhost:8080/ActiverDonneur/'+id)
+  .subscribe(responses => {
+      console.log(responses);
+      this.responses=responses;
+
+  });
+  this.showError();
+  location.href = "medecin";
+
+}
+
 showError() {
   this.messageService.add({severity:'error', summary: 'Error', detail: 'Message Content'});
 }
