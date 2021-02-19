@@ -15,25 +15,26 @@ export class BarChartComponent implements OnInit {
     .subscribe(responses => {
         console.log(responses);
         this.responses=responses;
+        this.data = {
+          labels: ['O_neg', 'O_pos', 'A_neg', 'A_pos', 'B_neg', 'B_pos', 'AB_neg','AB_pos'],
+          datasets: [
+            {
+                label: 'Donneurs',
+                backgroundColor: '#42A5F5',
+                borderColor: '#1E88E5',
+                data: [this.responses.o_neg_offre, this.responses.o_pos_offre, this.responses.a_neg_offre, this.responses.a_pos_offre, this.responses.b_neg_offre, this.responses.b_pos_offre, this.responses.ab_neg_offre,this.responses.ab_pos_offre]
+            },
+            {
+                label: 'Receveurs',
+                backgroundColor: '#9CCC65',
+                borderColor: '#7CB342',
+                data: [this.responses.o_neg_demande, this.responses.o_pos_demande, this.responses.a_neg_demande, this.responses.a_pos_demande, this.responses.b_neg_demande, this.responses.b_pos_demande, this.responses.ab_neg_demande,this.responses.ab_pos_demande]
+            }
+        ]
+      }
     });
 
-    this.data = {
-      labels: ['O_neg', 'O_pos', 'A_neg', 'A_pos', 'B_neg', 'B_pos', 'AB_neg','AB_pos'],
-      datasets: [
-          {
-              label: 'Donneurs',
-              backgroundColor: '#42A5F5',
-              borderColor: '#1E88E5',
-              data: [65, 59, 80, 81, 56, 55, 40,21]
-          },
-          {
-              label: 'Receveurs',
-              backgroundColor: '#9CCC65',
-              borderColor: '#7CB342',
-              data: [28, 48, 40, 19, 86, 27, 90,74]
-          }
-      ]
-  }
+
    }
 
   ngOnInit(): void {

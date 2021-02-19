@@ -21,4 +21,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validation()
+  {
+       location.href = "medecin";
+  }
+
 }
