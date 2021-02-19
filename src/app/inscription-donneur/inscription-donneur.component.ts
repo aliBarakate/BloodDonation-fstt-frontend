@@ -76,7 +76,7 @@ this.groupeSanguins = [
   }
   relocate_home()
 {
-     location.href = "receveur";
+     location.href = "successpage";
 }
 
   ngOnInit(): void {

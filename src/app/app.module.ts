@@ -24,6 +24,7 @@ import { MedecinComponent } from './medecin/medecin.component';
 import { InscriptionDonneurComponent } from './inscription-donneur/inscription-donneur.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
+import { SuccessPageComponent } from './success-page/success-page.component';
 
 
 
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
   { path: 'inscriptiondonneur', component: InscriptionDonneurComponent},
   { path: 'barchart', component: BarChartComponent},
   { path: 'doughnutchart', component: DoughnutChartComponent},
+  { path: 'successpage', component: SuccessPageComponent},
 ];
 
 @NgModule({
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     MedecinComponent,
     InscriptionDonneurComponent,
     BarChartComponent,
-    DoughnutChartComponent
+    DoughnutChartComponent,
+    SuccessPageComponent
   ],
   imports: [
     BrowserModule,
